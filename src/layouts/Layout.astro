@@ -1,22 +1,25 @@
-<!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
-	</head>
-	<body>
-		<slot />
-	</body>
-</html>
+---
+// src/layouts/GameLayout.astro
+import '../styles/global.css'; // Donde importas Tailwind
+const { title = "Juego de Concurso" } = Astro.props;
+---
 
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
-</style>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>{title}</title>
+</head>
+<body class="min-h-screen bg-gray-900 text-white font-sans">
+    <header class="p-6 bg-gray-800 shadow-xl">
+        <h1 class="text-4xl font-extrabold text-yellow-400 text-center">
+            CIEN Mexicanos Dijeron
+        </h1>
+    </header>
+
+    <main class="container mx-auto p-4 md:p-8">
+        <slot />
+    </main>
+
+    </body>
+</html>

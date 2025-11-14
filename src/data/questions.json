@@ -1,0 +1,22 @@
+
+[
+  {
+    "question": "¿Algo que la gente pide a domicilio?",
+    "answers": [
+      {"text": "Pizza", "points": 45},
+      {"text": "Tacos", "points": 25},
+      {"text": "Hamburguesa", "points": 15},
+      {"text": "Sushi", "points": 10}
+    ]
+  },
+  {
+    "question": "¿Marca de auto popular en México?",
+    "answers": [
+      {"text": "Nissan", "points": 40},
+      {"text": "Volkswagen", "points": 30},
+      {"text": "Chevrolet", "points": 15},
+      {"text": "Ford", "points": 10},
+      {"text": "Toyota", "points": 5}
+    ]
+  }
+]
