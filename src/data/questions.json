@@ -1,12 +1,11 @@
 
 [
   {
-    "question": "¿Algo que la gente pide a domicilio?",
+    "question": "¿A quién le echamos la culpa cuando algo sale mal?",
     "answers": [
-      {"text": "Pizza", "points": 45},
-      {"text": "Tacos", "points": 25},
-      {"text": "Hamburguesa", "points": 15},
-      {"text": "Sushi", "points": 10}
+      {"text": "Jorge", "points": 45},
+      {"text": "Cesar", "points": 35},
+      {"text": "Micky Mouse", "points": 20}
     ]
   },
   {

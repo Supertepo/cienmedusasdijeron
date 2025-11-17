@@ -2,47 +2,57 @@
 
 import React, { type JSX } from 'react';
 
-// 1. Añade la función onReveal al tipado de propiedades
 interface GameAnswerProps {
     initialNumber: number;
     initialText: string;
     initialPoints: number;
-    initialRevealed: boolean; // Ahora es requerido y refleja el estado del padre
-    onReveal: () => void; // Nuevo callback para notificar al padre
+    initialRevealed: boolean;
+    onReveal: () => void;
+    // 🎯 LO QUE FALTABA: Propiedad para deshabilitar el clic
+    disabled?: boolean; 
 }
 
 export default function GameAnswer({ 
     initialNumber, 
     initialText, 
     initialPoints, 
-    initialRevealed, // Lo renombramos a revealed para mayor claridad
-    onReveal // Usamos el callback
+    initialRevealed,
+    onReveal,
+    disabled = false // Valor por defecto
 }: GameAnswerProps): JSX.Element { 
     
-    // El estado ya NO es necesario, usamos initialRevealed como fuente de verdad.
     const revealed = initialRevealed;
 
     const handleClick = () => {
-        // Solo permite revelar si aún no está revelado
-        if (!revealed) {
-            onReveal(); // Llama a la función del padre para actualizar el estado central
+        // 🎯 LÓGICA CORREGIDA: Si está deshabilitado o ya está revelado, salimos.
+        if (disabled || revealed) {
+            return; 
         }
+        onReveal(); 
     };
+
+    // Determina si el clic debe ser tratado como inactivo (no revelado, pero deshabilitado)
+    const isDisabledStyle = disabled && !revealed;
 
     return (
         <div
             onClick={handleClick}
             role="button" 
-            tabIndex={0} 
+            // Hace que el elemento sea enfocable solo si no está deshabilitado
+            tabIndex={isDisabledStyle ? -1 : 0} 
             className={`
-                flex items-center justify-between p-4 my-2 rounded-lg transition-all duration-300 cursor-pointer
+                flex items-center justify-between p-4 my-2 rounded-lg transition-all duration-300
+                ${isDisabledStyle ? 'cursor-not-allowed opacity-50' : 'cursor-pointer'}
                 ${revealed
                     ? 'bg-yellow-100 border-l-8 border-red-600 shadow-xl scale-100'
-                    : 'bg-gray-700 border-l-8 border-gray-600 hover:bg-gray-600 hover:scale-[1.01]'
+                    // Estilos para cuando está oculto: deshabilitado o activo
+                    : isDisabledStyle 
+                        ? 'bg-gray-700 border-l-8 border-gray-600'
+                        : 'bg-gray-700 border-l-8 border-gray-600 hover:bg-gray-600 hover:scale-[1.01]'
                 }
             `}
         >
-            {/* ... Contenido del componente sin cambios en la estructura ... */}
+            {/* Contenido del componente sin cambios en la estructura */}
             <span className={`
                 text-3xl font-bold p-2 mr-4 w-12 text-center rounded-md shrink-0
                 ${revealed
