@@ -1,21 +1,28 @@
-
 [
   {
-    "question": "¿A quién le echamos la culpa cuando algo sale mal?",
+    "question": "¿Descuentos mas utilizados en boutique?",
     "answers": [
-      {"text": "Jorge", "points": 45},
-      {"text": "Cesar", "points": 35},
-      {"text": "Micky Mouse", "points": 20}
+      { "text": "10%", "points": 50 },
+      { "text": "20%", "points": 35 },
+      { "text": "50%", "points": 10 }
     ]
   },
   {
-    "question": "¿Marca de auto popular en México?",
+    "question": "¿Bebidas mas pedidas en el combo shark?",
     "answers": [
-      {"text": "Nissan", "points": 40},
-      {"text": "Volkswagen", "points": 30},
-      {"text": "Chevrolet", "points": 15},
-      {"text": "Ford", "points": 10},
-      {"text": "Toyota", "points": 5}
+      { "text": "Agua", "points": 30 },
+      { "text": "Coca-Cola", "points": 20 },
+      { "text": "Cambio Ice", "points": 20 },
+      { "text": "Sprite", "points": 15 },
+      { "text": "Sidral", "points": 15 }
+    ]
+  },
+  {
+    "question": "¿A quién le echamos la culpa cuando algo sale mal?",
+    "answers": [
+      { "text": "Jorge", "points": 45 },
+      { "text": "Cesar", "points": 35 },
+      { "text": "Micky Mouse", "points": 20 }
     ]
   }
 ]
