@@ -18,11 +18,19 @@
     ]
   },
   {
+    "question": "¿Razones por las que se merma los productos?",
+    "answers": [
+      { "text": "Uso incorrecto de PEPS", "points": 30 },
+      { "text": "No ofrecerlo", "points": 25 },
+      { "text": "Maltratarlo", "points": 25 },
+      { "text": "Micky Mouse jugo con el", "points": 20 }
+    ]
+  },
+  {
     "question": "¿A quién le echamos la culpa cuando algo sale mal?",
     "answers": [
-      { "text": "Jorge", "points": 45 },
-      { "text": "Cesar", "points": 35 },
-      { "text": "Micky Mouse", "points": 20 }
+      { "text": "Jorge", "points": 100 },
+      { "text": "Cesar", "points": 200 }
     ]
   }
 ]
